@@ -142,8 +142,8 @@ def create_inference_service(metadata, predictor_spec):
     Build and return V1beta1InferenceService object.
     """
     return V1beta1InferenceService(
-        api_version=constants.KSERVE_V1BETA1,
-        kind=constants.KSERVE_KIND,
+        api_version=constants.KFSERVING_V1BETA1,
+        kind=constants.KFSERVING_KIND,
         metadata=metadata,
         spec=V1beta1InferenceServiceSpec(
             predictor=predictor_spec
@@ -160,8 +160,8 @@ def submit_api_request(kserve_client, action, name, isvc, namespace=None,
     in raw InferenceService serialized YAML.
     """
     custom_obj_api = kserve_client.api_instance
-    args = [constants.KSERVE_GROUP,constants.KSERVE_V1BETA1_VERSION,
-            namespace, constants.KSERVE_PLURAL]
+    args = [constants.KFSERVING_GROUP,constants.KFSERVING_V1BETA1_VERSION,
+            namespace, constants.KFSERVING_PLURAL]
     if action == 'update':
         outputs = custom_obj_api.patch_namespaced_custom_object(*args, name, isvc)
     else:
