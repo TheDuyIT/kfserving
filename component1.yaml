@@ -24,7 +24,7 @@ implementation:
     image: theduy/kfserving_component:test1
     command: ['python']
     args: [
-      -u, kservedeployer.py,
+      -u, kfservingdeployer.py,
       --action,                 {inputValue: Action},
       --model-name,             {inputValue: Model Name},
       --model-uri,              {inputValue: Model URI},
