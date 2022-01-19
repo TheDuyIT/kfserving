@@ -1,2 +1,2 @@
-docker build -t theduy/kfserving_component:test .
-docker push theduy/kfserving_component:test
+docker build -t theduy/kfserving_component:test1 .
+docker push theduy/kfserving_component:test1
