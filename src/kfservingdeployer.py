@@ -21,9 +21,9 @@ import time
 import yaml
 
 from kubernetes import client
-
 from kfserving import constants
-from kfserving import KServeClient
+# from kfserving import KServeClient
+from kfserving import KFServingClient
 from kfserving import V1beta1InferenceService
 from kfserving import V1beta1InferenceServiceSpec
 from kfserving import V1beta1LightGBMSpec
@@ -189,7 +189,7 @@ def perform_action(action, model_name, model_uri, canary_traffic_percent, namesp
     provided input and then sent for creation/update.
     :return InferenceService JSON output
     """
-    kserve_client = KServeClient()
+    kserve_client = KFServingClient()
 
     if inferenceservice_yaml:
         # Overwrite name and namespace if exists
