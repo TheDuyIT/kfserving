@@ -8,6 +8,5 @@ RUN python3 -m pip install -r \
 ENV APP_HOME /app
 COPY src $APP_HOME
 WORKDIR $APP_HOME
-
 ENTRYPOINT ["python"]
-CMD ["kservedeployer.py"]
+CMD ["kfservingdeployer.py"]
