@@ -21,7 +21,7 @@ outputs:
   - {name: InferenceService Status,   type: String,                        description: 'Status JSON output of InferenceService'}
 implementation:
   container:
-    image: theduy/kfserving_component:test5
+    image: theduy/kfserving_component:test5_
     command: ['python']
     args: [
       -u, kfservingdeployer.py,
